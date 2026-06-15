@@ -1,0 +1,6 @@
+{
+  "name": "Vignan College Portal",
+  "description": "An interactive educational portal for Vignan's Institute of Information Technology, featuring personalized dashboards for Students, Employees (Faculty), and Parents. It simulates academic records, attendance trackers, class schedules, and profile management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

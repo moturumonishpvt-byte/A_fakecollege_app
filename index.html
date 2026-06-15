@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      // Sandboxed iframe window.fetch write-protection bypass
+      (function() {
+        var nativeFetch = window.fetch;
+        try {
+          Object.defineProperty(window, 'fetch', {
+            get: function() { return nativeFetch; },
+            set: function(v) { nativeFetch = v; },
+            configurable: true,
+            enumerable: true
+          });
+        } catch(e) {
+          try {
+            Object.defineProperty(globalThis, 'fetch', {
+              get: function() { return nativeFetch; },
+              set: function(v) { nativeFetch = v; },
+              configurable: true,
+              enumerable: true
+            });
+          } catch(e2) {}
+        }
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
